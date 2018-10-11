@@ -27,6 +27,15 @@ public class Colosseum {
      */
     static final int MAX_ATTACK_LEVEL = 49;
 
+    /**
+     * The lowest index level for type.
+     */
+    static final int TYPE_INDEX_MIN = 1;
+
+    /**
+     * The highest index level for type.
+     */
+    static final int TYPE_INDEX_MAX = 3;
 
     /**
      * The maximum number of rounds we will let the Pokemon battle.
@@ -113,7 +122,22 @@ public class Colosseum {
      * (Look, we can return objects too!)
      */
     public static Pokemon buildPokemon() {
-        Pokemon tempPokemon = new Pokemon();
+        System.out.println("Select from the following Pokemon types:" + "\n" + "1 - Electric Pokemon" + "\n"
+                            + "2 - Fire Pokemon" + "\n" + "3 - Water Pokemon");
+        int type = myScan.nextInt();
+        while (type < TYPE_INDEX_MIN || type > TYPE_INDEX_MAX) {
+            System.out.println("Sorry, you must pick either 1, 2, or 3.");
+            System.out.println("Select from the following Pokemon types:" + "\n" + "1 - Electric Pokemon" + "\n"
+                    + "2 - Fire Pokemon" + "\n" + "3 - Water Pokemon");
+            type = myScan.nextInt();
+        }
+        if (type == 1) {
+            ElectricPokemon tempPokemon = new ElectricPokemon();
+        } else if (type == 2) {
+            FirePokemon tempPokemon = new FirePokemon();
+        } else {
+            WaterPokemon tempPokemon = new WaterPokemon();
+        }
         System.out.println("Please name your Pokemon: ");
         tempPokemon.setName(myScan.next());
         System.out.println("How many hit points will it have?");

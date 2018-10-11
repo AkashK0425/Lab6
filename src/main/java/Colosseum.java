@@ -18,6 +18,17 @@ public class Colosseum {
     static final int MAX_HIT_POINTS = 50;
 
     /**
+     * The maximum sum of attack level and defense level we will allow a Pokemon to start with.
+     */
+    static final int TOTAL_ATTACK_DEFENSE = 50;
+
+    /**
+     * The maximum attack level we will allow a Pokemon to start with.
+     */
+    static final int MAX_ATTACK_LEVEL = 49;
+
+
+    /**
      * The maximum number of rounds we will let the Pokemon battle.
      */
     static final int MAX_NUM_ROUNDS = 10;
